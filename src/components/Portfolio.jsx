@@ -3,6 +3,7 @@ import edge from "../assests/edge.png";
 import hotel from "../assests/hotel.png";
 import loan from "../assests/loan.png";
 import newsgrid from "../assests/newsgrid.png";
+import eventbuddy from "../assests/eventbuddy.png";
 
 const Portfolio = () => {
   const portfolios = [
@@ -10,21 +11,31 @@ const Portfolio = () => {
       id: 1,
       src: edge,
       demo: "https://edgeledgermak.netlify.app/",
+      code: "",
     },
     {
       id: 2,
       src: loan,
       demo: "https://loancalculatormak.netlify.app/",
+      code: "",
     },
     {
       id: 3,
       src: hotel,
       demo: "https://hotelwebsitemak.netlify.app/",
+      code: "",
     },
     {
       id: 4,
       src: newsgrid,
       demo: "https://newsgridmak.netlify.app/",
+      code: "https://github.com/makpashilkar/newsgrid",
+    },
+    {
+      id: 5,
+      src: eventbuddy,
+      demo: "https://eventbuddyplan.netlify.app",
+      code: "https://github.com/makpashilkar/eventplanner",
     },
   ];
   return (
@@ -42,7 +53,7 @@ const Portfolio = () => {
 
         {/* stucture for card */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-          {portfolios.map(({ id, src, demo }) => (
+          {portfolios.map(({ id, src, demo, code }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
               <img
                 src={src}
@@ -56,7 +67,9 @@ const Portfolio = () => {
                   </a>
                 </button>
                 <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  Code
+                  <a href={code} target="noreferrer">
+                    Code
+                  </a>
                 </button>
               </div>
             </div>
